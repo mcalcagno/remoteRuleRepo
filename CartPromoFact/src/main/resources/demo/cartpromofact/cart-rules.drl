@@ -1,0 +1,41 @@
+package demo.cartpromofact;
+
+import external.facts.ExternalCartFact;
+
+rule "Any Cart"
+when
+    $cart : Cart()
+then
+    System.out.println("*********ANY CART PROMO*********"+$cart.getId());
+end;
+
+rule "Any Cart Entry"
+when
+    $entry : CartEntry()
+then
+    System.out.println("*********ANY CART ENTRY PROMO*********");
+end;
+
+rule "cart free => amount zero"
+when 
+    $c : Cart(id == "freecart")
+then
+    System.out.println("*********FREE CART PROMO*********");
+    $c.setAmount(0.0);
+end;
+
+rule "product productFree, entry free"
+when
+    $cart : Cart($entries : entries)
+    $entry : CartEntry(product.id == "productFree") from $entries
+then
+    System.out.println("*********FREE PRODUCT PROMO*********");
+    $entry.setPrice(0.0);
+end;
+
+rule "Any ExternalCart"
+when
+    $ec : ExternalCartFact()
+then
+    System.out.println("#################ANY EXTERNAL CART#################");
+end;   
