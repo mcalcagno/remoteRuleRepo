@@ -1,7 +1,5 @@
 package demo.cartpromofact;
 
-import external.facts.ExternalCartFact;
-
 rule "Any Cart"
 when
     $cart : Cart()
@@ -33,9 +31,3 @@ then
     $entry.setPrice(0.0);
 end;
 
-rule "Any ExternalCart"
-when
-    $ec : ExternalCartFact()
-then
-    System.out.println("#################ANY EXTERNAL CART#################");
-end;   
