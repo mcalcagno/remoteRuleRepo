@@ -11,11 +11,4 @@
   <modules>
     <module>CartPromoFact</module>
   </modules>
-  <repositories>
-    <repository>
-      <id>guvnor-m2-repo</id>
-      <name>Guvnor M2 Repo</name>
-      <url>file://c:\_tomcat-8.5.20\bin\repositories\kie</url>
-    </repository>
-  </repositories>
 </project>
