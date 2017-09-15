@@ -15,6 +15,8 @@ public class Cart implements java.io.Serializable
 
    private java.lang.Double amount;
 
+   private java.lang.String message;
+
    public Cart()
    {
    }
@@ -59,14 +61,25 @@ public class Cart implements java.io.Serializable
       this.amount = amount;
    }
 
+   public java.lang.String getMessage()
+   {
+      return this.message;
+   }
+
+   public void setMessage(java.lang.String message)
+   {
+      this.message = message;
+   }
+
    public Cart(java.lang.String id, demo.cartpromofact.User user,
          java.util.List<demo.cartpromofact.CartEntry> entries,
-         java.lang.Double amount)
+         java.lang.Double amount, java.lang.String message)
    {
       this.id = id;
       this.user = user;
       this.entries = entries;
       this.amount = amount;
+      this.message = message;
    }
 
 }
